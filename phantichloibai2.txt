@@ -1,0 +1,21 @@
+sau khi chạy express_orders.insert(0, "GE100-FAST") thì sẽ thêm phần tử GE100-FAST vào đầu danh sách
+
+express_orders[1] = "GE102-UPDATED" dòng này sửa nhầm đơn hàng GE101 thay vì GE102-WRONG
+vì sau khi thêm GE100-FAST thì vị trí đã thay đổi, lúc này GE102-UPDATE nằm ở vị trí index = 2 muốn sửa chính xác
+ta phải viết express_orders[2] = "GE102-WRONG"
+
+express_orders.pop(3) xóa sai vị trí vì vị trí cần xóa là index = 2 express_orders.pop(2)
+
+express_orders.remove("GE103-CANCEL")
+remove() xóa theo giá trị của phần tử.
+
+Vì sao dòng sau lấy sai đơn hàng đang giao?
+current_order = express_orders.pop()
+Vì pop() mặc định lấy phần tử cuối danh sách.
+Sau khi xử lý, danh sách là:
+["GE100-FAST", "GE102-UPDATED", "GE102-WRONG", "GE104"]
+
+Muốn lấy đơn hàng đầu tiên trong danh sách ra để giao, cần viết lệnh như thế nào?
+current_order = express_orders.pop(0)
+0 là vị trí đầu tiên của danh sách.
+
